@@ -1,7 +1,44 @@
 .App {
+  display: flex;
   text-align: center;
+  flex-direction: column;
+  width: 100vw;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+.addTask {
+  height: 30vh;
+  background-color: dodgerblue;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lists {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+  flex-direction: column;
+}
+.task {
+  width: 500px;
+  height: 50px;
+  display: flex;
+  margin: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.task button {
+  height: 20px;
+  margin-left: 20px;
+  text-align: center;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -24,11 +24,29 @@ function App() {
     console.log(allTasks);
   }
 
-  
-
   function deleteTask(task) {
     addTaskList(tasksList.filter(thisTask => thisTask.id !== task.id));
   }
+
+  function updateCompleted(completedTask) {
+    addTaskList(
+      tasksList.map((task) => {
+        if (task.id === completedTask.id) {
+          if (completedTask.completed) {
+            return {...task, completed: false};
+          } else if (!completedTask.completed) {
+            return {...task, completed: true};
+          }
+          
+        } else {
+          return task
+        }
+        
+      })
+    );  
+    
+  }
+
   return (
     <div className="App">
       <div className='addTask'>
@@ -37,7 +55,8 @@ function App() {
       </div>
       <div className='lists'>
         {tasksList.map((task) => {
-          return <Task task={task} deleteTask={deleteTask}></Task>
+          return (<Task task={task} deleteTask={deleteTask} 
+          updateCompleted={updateCompleted}></Task>)
         })
         }
       </div>
